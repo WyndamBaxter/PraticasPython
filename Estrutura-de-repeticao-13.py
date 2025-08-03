@@ -11,7 +11,7 @@ def valida_entrada(mensagem):
     '''
     while True:
         try:
-            entrada = float(input(mensagem))
+            entrada = int(input(mensagem))
             return entrada
         except ValueError as ve:
             print(f"Entrada inválida, por favor digite um número.")
@@ -19,15 +19,18 @@ def valida_entrada(mensagem):
             print(f"Ocorreu um erro inesperado: {e}")
 def calcula_exponencial(base, expoente):
     '''
-    Função que retorna dicionário com cálculo de base e expoente
+    Função que retorna o cálculo de base e expoente sem usar a função de potência.
     :param base: base da potência
-    :param exponte: expoente da potência
-    :return: resultado: armazena os valores do cálculo.
+    :param expoente: expoente da potência
+    :return: resultado: retorna o valor do cálculo.
     '''
-    resultado = pow(base, expoente)
+    resultado = 1
+    for i in range(expoente):
+        resultado *= base
+
     return resultado
+
 base = valida_entrada("Digite a base: ")
 expoente = valida_entrada("Digite o expoente: ")
 resultado = calcula_exponencial(base, expoente)
 print(f"{base}^{expoente} = {resultado:.2f}")
-
