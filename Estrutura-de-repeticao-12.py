@@ -33,6 +33,7 @@ def calcula_operacao(numero):
     for number in range(1, 11):
         operacao[number] = number*numero
     return operacao
+#programa principal
 numero = valida_entrada("Digite um número entre 1 e 10: ")
 resultado = calcula_operacao(numero)
 
