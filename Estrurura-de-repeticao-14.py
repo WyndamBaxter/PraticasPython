@@ -39,29 +39,16 @@ def calcula_paridade(lista_numeros):
 
     return paridade_contagem
 
-
-lista_de_validacao = [
-    ("numero1", valida_entrada, "Digite o primeiro número"),
-    ("numero2", valida_entrada, "Digite o segundo número"),
-    ("numero3", valida_entrada, "Digite o terceiro número"),
-    ("numero4", valida_entrada, "Digite o quarto número"),
-    ("numero5", valida_entrada, "Digite o quinto número"),
-    ("numero6", valida_entrada, "Digite o sexto número"),
-    ("numero7", valida_entrada, "Digite o sétimo número"),
-    ("numero8", valida_entrada, "Digite o oitavo número"),
-    ("numero9", valida_entrada, "Digite o nono número"),
-    ("numero10", valida_entrada, "Digite o décimo número")
-]
-#Loop para entrada do usuário.
 lista_numeros = []
-for campo, funcao_validacao, mensagem in lista_de_validacao:
-    lista_numeros.append(funcao_validacao(mensagem))
-#Dicionário contendo a contagem de valores pares e ímpares retornadas pela função calcula_paridade.
+for i in range(1,11):
+    mensagem = f"Digite o {i}° número: "
+    lista_numeros.append(valida_entrada(mensagem))
+
 paridade = calcula_paridade(lista_numeros)
-#Impressão da quantidade de ímpares e pares
 
 pares = [numero for numero in lista_numeros if numero % 2 == 0]
 impares = [numero for numero in lista_numeros if numero % 2 != 0]
+
 print(f"Quantidade de números pares: {paridade['Par']}: {pares}")
 print(f"Quantidade de números impares: {paridade['Ímpar']}: {impares}")
 
