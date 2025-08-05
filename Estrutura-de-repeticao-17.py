@@ -34,6 +34,7 @@ def calcula_fatorial(inteiro):
         for i in range(1, inteiro + 1):
             fatorial *= i
         return fatorial
+#Programa principal
 numero_inteiro = valida_entrada("Digite um número inteiro: ")
 resultado_fatorial = calcula_fatorial(numero_inteiro)
 print(f"{numero_inteiro}! é {resultado_fatorial}")
